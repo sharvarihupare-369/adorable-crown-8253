@@ -4,7 +4,7 @@ import {Box} from "@chakra-ui/react"
 
 export const App = () => (
   
-    <Box textAlign="center" fontSize="xl">
+    <Box className="App" textAlign="center" fontSize="xl">
       
     </Box>
  
