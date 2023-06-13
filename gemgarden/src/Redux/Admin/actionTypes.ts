@@ -1,0 +1,2 @@
+
+export const ADMIN_GET_REQUEST = 'ADMIN_GET_REQUEST';
