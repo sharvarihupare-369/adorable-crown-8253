@@ -1,3 +1,4 @@
+import { Action } from "redux";
 
 const initialState = {
     isLoading : false,
@@ -5,6 +6,10 @@ const initialState = {
     isError : false
 }
 
-export const reducer = (state=initialState ) => {
-  
-}
+export const reducer = (state = initialState, action:Action) => {
+    switch (action.type) {
+      default: {
+        return { ...state };
+      }
+    }
+  };

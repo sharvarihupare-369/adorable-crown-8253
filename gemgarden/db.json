@@ -1,9 +1,330 @@
 {
-  "posts": [
+  "arrival": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/L/JL04543-1RP900_4_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/L/JL04543-1RP900_5_lar.jpg",
+      "currentPrice": 51593,
+      "originalPrice": 55105,
+      "name": "Lasa Diamond Necklace",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/L/JL04543-1RP900_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/L/JL04543-1RP900_3_lar.jpg",
+      "id": 1
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07378-1RP900_3_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07378-1RP900_8_lar.jpg",
+      "currentPrice": 46199,
+      "originalPrice": 52543,
+      "name": "Aayati Classic Diamond Ring",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07378-1RP900_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07378-1RP900_4_lar.jpg",
+      "id": 2
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/T/JT01768-1RP600_5_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/T/JT01768-1RP600_3_lar.jpg",
+      "currentPrice": 104856,
+      "originalPrice": 115146,
+      "name": "Akansha Spiral Diamond Bracelet",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/T/JT01768-1RP600_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/T/JT01768-1RP600_4_lar.jpg",
+      "id": 3
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07560-1RP9RQ_3_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07560-1RP9RQ_7_lar.jpg",
+      "currentPrice": 79875,
+      "originalPrice": 87693,
+      "name": "Precipice Gemstone Drop Earrings",
+      "material": "Gemstone",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07560-1RP9RQ_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07560-1RP9RQ_4_lar.jpg",
+      "id": 4
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07381-1RP600_3_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07381-1RP600_8_lar.jpg",
+      "currentPrice": 58639,
+      "originalPrice": 65057,
+      "name": "Scarlett Sparkling Diamond Ring",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07381-1RP600_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07381-1RP600_4_lar.jpg",
+      "id": 5
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/L/JL03508-YGP6P0_4_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/L/JL03508-YGP6P0_6_lar.jpg",
+      "currentPrice": 54837,
+      "originalPrice": 59088,
+      "name": "Petals and Pearls Necklace",
+      "material": "Pearls",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/L/JL03508-YGP6P0_5_lar.jpg",
+      "id": 6
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00598-YGP600_3_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00598-YGP600_6_lar.jpg",
+      "currentPrice": 46017,
+      "originalPrice": 47101,
+      "name": "Shreya Miracle Plate Diamond Mangalsutra",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00598-YGP900_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/S/JS00598-YGP600_1_lar.png",
+      "id": 7
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/E/JE06947-1YP600_3_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/E/JE06947-1YP600_4_lar.jpg",
+      "currentPrice": 33340,
+      "originalPrice": 37067,
+      "name": "Arabella Leaf Diamond Stud Earrings",
+      "material": "Diamond",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/E/JE06947-1YP600_2_lar.jpg",
+      "id": 8
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/T/JT01469-1YP9P0_3_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/T/JT01469-1YP9P0_5_lar.jpg",
+      "currentPrice": 22726,
+      "originalPrice": 25250,
+      "name": "Charlotte Stunning Diamond Bracelet",
+      "material": "Diamond",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/T/JT01469-1YP9P0_4_lar.jpg",
+      "id": 9
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07706-1RP600_4_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07706-1RP600_7_lar.jpg",
+      "currentPrice": 73016,
+      "originalPrice": 85493,
+      "name": "Pia Diamond Stud Earrings",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07706-1RP600_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07706-1RP600_3_lar.jpg",
+      "id": 10
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07347-1YP900_4_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07347-1YP900_5_lar.jpg",
+      "currentPrice": 35563,
+      "originalPrice": 40525,
+      "name": "Regalina Diamond Band",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07347-1YP900_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/R/JR07347-1YP900_3_lar.jpg",
+      "id": 11
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07657-1RP600_4_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07657-1RP600_7_lar.jpg",
+      "currentPrice": 76269,
+      "originalPrice": 90926,
+      "name": "Bibaa Diamond Stud Earrings",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07657-1RP600_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07657-1RP600_3_lar.jpg",
+      "id": 12
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/S/JS01030-1RP900_4_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/S/JS01030-1RP900_5_lar.jpg",
+      "currentPrice": 34022,
+      "originalPrice": 38599,
+      "name": "Amia Lariat Diamond Mangalsutra",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/S/JS01030-1RP900_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/S/JS01030-1RP900_3_lar.jpg",
+      "id": 13
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07710-1RP600_4_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07710-1RP600_7_lar.jpg",
+      "currentPrice": 86401,
+      "originalPrice": 102935,
+      "name": "Arra Diamond Stud Earrings",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07710-1RP600_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07710-1RP600_3_lar.jpg",
+      "id": 14
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07707-1RP600_4_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07707-1RP600_7_lar.jpg",
+      "currentPrice": 70207,
+      "originalPrice": 79523,
+      "name": "Shi Diamond Stud Earrings",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07707-1RP600_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07707-1RP600_3_lar.jpg",
+      "id": 15
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05456-1TP600_4_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05456-1TP600_6_lar.jpg",
+      "currentPrice": 19314,
+      "originalPrice": 21459,
+      "name": "Nova Twist Diamond Ring",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05456-1TP600_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05456-1TP600_3_lar.jpg",
+      "id": 16
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07589-1RP900_4_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07589-1RP900_7_lar.jpg",
+      "currentPrice": 67967,
+      "originalPrice": 79433,
+      "name": "Marlin Three Step Diamond Drop Earrings",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07589-1RP900_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07589-1RP900_3_lar.jpg",
+      "id": 17
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07775-1RP600_4_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07775-1RP600_7_lar.jpg",
+      "currentPrice": 37996,
+      "originalPrice": 42136,
+      "name": "Lenovia Diamond Drop Earrings",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07775-1RP600_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07775-1RP600_3_lar.jpg",
+      "id": 18
+    }
+  ],
+  "rings": [
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR00872-WGP900_1_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR00872-WGP900_3_lar.jpg",
+      "tag": "BESTSELLER",
+      "currentPrice": 83098,
+      "originalPrice": 84968,
+      "name": "Carson Diamond Ring for Men",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/R/JR00872-WGP900_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/R/JR00872-WGP900_4_lar.jpg",
+      "id": 1
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_5_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_4_lar.jpg",
+      "tag": "BESTSELLER",
+      "currentPrice": 20280,
+      "originalPrice": 20676,
+      "name": "Intertwined Glim Diamond Ring",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03769-YGP900_3_lar.jpg",
+      "id": 2
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05067-RGP600_5_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05067-RGP600_4_lar.jpg",
+      "tag": "BESTSELLER",
+      "currentPrice": 85067,
+      "originalPrice": 94243,
+      "name": "Radiating Diamond Bridal Ring Set",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05067-RGP600_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05067-RGP600_3_lar.jpg",
+      "id": 3
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR00422-YGP900_5_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR00422-YGP900_4_lar.jpg",
+      "currentPrice": 24260,
+      "originalPrice": 26955,
+      "name": "Blossom Diamond Ring",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/R/JR00422-YGP900_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/R/JR00422-YGP900_3_lar.jpg",
+      "id": 4
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05951-1PP900_5_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05951-1PP900_4_lar.jpg",
+      "tag": "BESTSELLER",
+      "currentPrice": 48321,
+      "originalPrice": 55142,
+      "name": "Abru Diamond Ring",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05951-1PP900_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05951-1PP900_3_lar.jpg",
+      "id": 5
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05980-1RP900_5_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05980-1RP900_4_lar.jpg",
+      "tag": "BESTSELLER",
+      "currentPrice": 11852,
+      "originalPrice": 13169,
+      "name": "Triune Sparkle Diamond Ring",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05980-1RP900_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05980-1RP900_3_lar.jpg",
+      "id": 6
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05615-1YP600_5_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05615-1YP600_4_lar.jpg",
+      "tag": "BESTSELLER",
+      "currentPrice": 19815,
+      "originalPrice": 24769,
+      "name": "Duo Flare Diamond Ring",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05615-1YP600_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/R/JR05615-1YP600_3_lar.jpg",
+      "id": 7
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03355-WGP600_5_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03355-WGP600_4_lar.jpg",
+      "tag": "BESTSELLER",
+      "currentPrice": 52594,
+      "originalPrice": 58618,
+      "name": "Emily Halo Diamond Ring",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03355-WGP600_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03355-WGP600_3_lar.jpg",
+      "id": 8
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03768-YGP600_5_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03768-YGP600_4_lar.jpg",
+      "currentPrice": 22198,
+      "originalPrice": 24663,
+      "name": "Interwind Shimmer Diamond Ring",
+      "material": "Diamond",
+      "video": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03768-YGP600_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/J/R/JR03768-YGP600_3_lar.jpg",
+      "id": 9
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/S/R/SR02838-WGP900_5_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/S/R/SR02838-WGP900_3_lar.jpg",
+      "tag": "BESTSELLER",
+      "currentPrice": 166454,
+      "originalPrice": 182429,
+      "name": "Daze Solitaire Ring",
+      "material": "Solitaire",
+      "video": "https://cdn.caratlane.com/media/catalog/product/S/R/SR02838-WGP900_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/S/R/SR02838-WGP900_4_lar.jpg",
+      "id": 10
+    },
+    {
+      "src1": "https://cdn.caratlane.com/media/catalog/product/S/R/SR02162-WGP900_5_lar.jpg",
+      "src2": "https://cdn.caratlane.com/media/catalog/product/S/R/SR02162-WGP900_4_lar.jpg",
+      "currentPrice": 262721,
+      "originalPrice": 289007,
+      "name": "Iona Halo Solitaire Ring",
+      "material": "Solitaire",
+      "video": "https://cdn.caratlane.com/media/catalog/product/S/R/SR02162-WGP900_16_video.mp4",
+      "src3": "https://cdn.caratlane.com/media/catalog/product/S/R/SR02162-WGP900_3_lar.jpg",
+      "id": 11
     }
   ]
 }

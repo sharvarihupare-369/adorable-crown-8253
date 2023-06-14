@@ -1,0 +1,156 @@
+.admin{
+    /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=31302f&c2=2a2a2a&gt=r&gd=dcc
+*/
+/* background: #31302F;
+background: radial-gradient(at center, #31302F, #2A2A2A);
+font-family: 'Nunito Sans', sans-serif;
+padding-bottom: 50px; */
+}
+h1{
+    font-weight: 200;
+    font-size:30px;
+    color: rgba(255, 255, 255, 0.825);
+    padding: 20px 0px 20px;
+
+/*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=363527&c2=010101&gt=l&gd=dbb
+*/
+background: #363527;
+background: linear-gradient(0deg, #363527, #010101);
+
+}
+.AdminPageContainer{
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: space-between;
+
+}
+.AdminProductsList{
+width: 70%;
+
+
+background-color: white;
+/* border: 5px solid blue; */
+}
+.AddingSection{
+/*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=363527&c2=010101&gt=l&gd=dtt
+*/
+background: #363527;
+background: linear-gradient(180deg, #363527, #010101);
+width: 30%; 
+height: 100vh;
+margin: auto;
+padding: 10px 10px 10px;
+    /* border: 5px solid orange; */
+}
+.ProductAddingForm{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   
+    justify-content: center;
+   
+    border-radius: 5px;
+    padding: 10px 10px 10px;
+    border: 1px dashed grey;
+    color: white;
+}
+.ProductAddingForm>input,
+.ProductAddingForm>select{
+    outline: none;
+    border: 1px solid grey;
+    margin: 5px;
+    color: #2E2D2D;
+    padding: 2px 10px 2px;
+    border-radius: 5px;
+}
+.tagBestSeller{
+    display: flex;
+margin-top: 25px;
+}
+.tagBestSeller>input{
+    width: 25px;
+    
+}
+label{
+    margin-right: 25px;
+}
+.ProductAddingForm>button{
+    background-color: white;
+    width: 100px;
+    height: 40px;
+    margin: auto;
+    color: #2E2D2D; 
+    padding: 2px 10px 2px;
+    border-radius: 5px;  
+}
+.pricetodiscount{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.SlidingComponent{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.slider{
+  width: 100%;
+ 
+}
+.slider>input{
+width: 100%;
+
+
+color: chocolate;
+background-color: rgb(49, 49, 23); /* Change the background color to yellow */
+cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+.slidingnumber{
+width: 100%;
+display: flex;
+justify-content: space-between;
+}
+.pricetodiscount>input{
+    width: 150px;
+   
+    align-items: center;
+   
+
+    outline: none;
+    border: 1px solid grey;
+    margin: 5px;
+    color: #2E2D2D;
+    padding: 2px 10px 2px;
+    border-radius: 5px;
+
+
+}
+.ProductAddingForm>button:hover{
+    background-color: #2E2D2D;
+    color: white;
+    border: 1px solid white;
+    
+
+  
+    padding: 2px 10px 2px;
+    border-radius: 5px;
+}
