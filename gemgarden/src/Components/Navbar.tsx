@@ -23,9 +23,11 @@ import logo from '../Assets/GemGardenLogo2.png'
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
+import { useNavigate } from 'react-router-dom';
   
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
+    const navigate = useNavigate()
   
     return (
       <Box >
@@ -85,7 +87,7 @@ import logo from '../Assets/GemGardenLogo2.png'
             spacing={6}>
                 <Button
                 textDecoration={"none"}
-            color={"#FFFFFF"}
+              color={"#FFFFFF"}
               as={'a'}
               fontSize={'sm'}
               fontWeight={500}
@@ -97,19 +99,20 @@ import logo from '../Assets/GemGardenLogo2.png'
 
               Contact Us
             </Button>
-            <Button
+            <Text
+            onClick={()=>navigate("/signup")}
             _hover={{
               color:"rgb(255,189,89)"
             }}
              textDecoration={"none"}
-            color={"#FFFFFF"}
+             color={"#FFFFFF"}
               as={'a'}
               fontSize={'sm'}
               fontWeight={500}
               variant={'link'}
               href={'#'}>
               Account
-            </Button>
+            </Text>
 
             <Button
             _hover={{
@@ -125,19 +128,7 @@ import logo from '../Assets/GemGardenLogo2.png'
               Bag
             </Button>
             
-            {/* <Button
-              as={'a'}
-              display={{ base: 'none', md: 'inline-flex' }}
-              fontSize={'sm'}
-              fontWeight={600}
-              color={'white'}
-              bg={'pink.400'}
-              href={'#'}
-              _hover={{
-                bg: 'pink.300',
-              }}>
-              Sign Up
-            </Button> */}
+            
           </Stack>
         </Flex>
   
