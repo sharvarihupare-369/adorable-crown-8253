@@ -20,7 +20,7 @@
     "react-dom": "^18.2.0",
     "react-icons": "^3.11.0",
     "react-redux": "^8.1.0",
-    "react-router-dom": "^6.12.1",
+    "react-router-dom": "^6.13.0",
     "react-scripts": "5.0.1",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
@@ -32,7 +32,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server":"json-server --watch db.json --port 8080"
+    "server": "json-server --watch db.json --port 8080"
   },
   "eslintConfig": {
     "extends": "react-app"
