@@ -12,6 +12,7 @@ import { SingleProductPage } from './SingleProductPage'
 import { Cart } from './Cart'
 import { Payment } from './Payment'
 import { WishList } from './WishList'
+import { AdminLogin } from './AdminLogin'
 
 export const MainRoutes = () => {
   return (
@@ -22,6 +23,7 @@ export const MainRoutes = () => {
       <Route path='/about' element={<About/>} />
       <Route path='/admin' element={<Admin/>} />
       <Route path='/login' element={<Login/>} />
+      <Route path='/adminlogin' element={<AdminLogin/>} />
       <Route path='/signup' element={<SignUp/>} />
       <Route path='/product' element={<Product/>} />
       <Route path='/product/:id' element={<SingleProductPage/>} />

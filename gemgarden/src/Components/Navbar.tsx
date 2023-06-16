@@ -14,9 +14,13 @@ import {
     useColorModeValue,
     useBreakpointValue,
     useDisclosure,
-    Image
+    Image,
+    Input
   } from '@chakra-ui/react';
+  // import './Navbar.module.css'
+  import {useState} from 'react';
 import logo from '../Assets/GemGardenLogo2.png'
+import { FaSearch } from 'react-icons/fa';
   import {
     HamburgerIcon,
     CloseIcon,
@@ -28,10 +32,28 @@ import { useNavigate } from 'react-router-dom';
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
     const navigate = useNavigate()
+
+    const [show,setShow] = useState(false)
+
+  //   function searchToggle(obj, evt){
+  //     var container = $(obj).closest('.search-wrapper');
+  //         if(!container.hasClass('active')){
+  //             container.addClass('active');
+  //             evt.preventDefault();
+  //         }
+  //         else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
+  //             container.removeClass('active');
+  //             // clear input
+  //             container.find('.search-input').val('');
+  //         }
+  // }
+
+  
   
     return (
       <Box >
         <Flex
+        cursor={"pointer"}
         backgroundColor={"#262425"}
         //   bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
@@ -42,7 +64,8 @@ import { useNavigate } from 'react-router-dom';
           // borderStyle={'solid'}
           bgGradient='linear(to-l, #222220, #2A2829 , #25231F)'
           // borderColor={useColorModeValue('gray.200', 'gray.900')}
-          align={'center'}>
+          align={'center'}
+          >
           <Flex
          
             flex={{ base: 1, md: 'auto' }}
@@ -57,16 +80,24 @@ import { useNavigate } from 'react-router-dom';
               aria-label={'Toggle Navigation'}
             />
           </Flex>
-          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-            {/* <Text
+          <Flex alignItems={"center"} flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
+            <Image
+            onClick={()=>navigate("/")}
+            src={logo}
+            w="70px"
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
             //   color={useColorModeValue('gray.800', 'white')}
             color={"#FFFFFF"}
-              >
-              Logo
+              />
+              {/* Logo
             </Text> */}
-            
+            {/* <Flex >
+            <Box>
+            <Image src={logo} w="100%" />
+            </Box>
+          </Flex>
+             */}
           
   
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
@@ -74,17 +105,47 @@ import { useNavigate } from 'react-router-dom';
             </Flex>
           </Flex>
 
-          {/* <Flex >
-            <Box w="80px">
-            <Image src={logo} w="100%" />
-            </Box>
-          </Flex> */}
+          
+          <Flex   w="25%" alignItems={"center"} mr="30px">
+            {
+              show ?  <Input   borderRight={"none"}
+              borderTop={"none"}
+               
+              focusBorderColor='none'
+              placeholder={'Search Something here...'}
+              // bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
+              _placeholder={{ opacity: 1, color: 'white' }}
+              _focus={{
+                bg: 'white',
+                borderColor:"#FFB300"
+              }}  type="text" mr="20px" /> :  <FaSearch  style={{color:"white",marginLeft:"90%" }} onClick={() : void => setShow(true)} />
+            }
+           {
+            show ?   <CloseIcon style={{color:"white"}}  onClick={():void => setShow(false)} /> : '' 
+           }
+          
+             
+          </Flex>
+
   
           <Stack
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
-            spacing={6}>
+            spacing={8}>
+
+            
+
+              
+
+
+              {/* <div className="search-wrapper">
+    <div className="input-holder">
+        <input type="text" className="search-input" placeholder="Type to search" />
+        <button className="search-icon" onClick={(event)=> searchToggle({this: event};)}><span></span></button>
+    </div>
+    <span className="close" onClick={(event) => searchToggle({this: event};)}></span>
+</div> */}
                 <Button
                 textDecoration={"none"}
               color={"#FFFFFF"}

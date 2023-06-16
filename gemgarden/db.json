@@ -1,4 +1,24 @@
 {
+
+  "adminlogindata" : [
+    {
+      "email" : "sharvari",
+      "password" : "admin"
+    },
+    {
+      "email" : "ranjeet",
+      "password" : "admin"
+    },
+    {
+      "email" : "rohit",
+      "password" : "admin"
+    },
+    {
+      "email" : "harshit",
+      "password" : "admin"
+    }
+    ],
+      
   "arrival": [
     {
       "src1": "https://cdn.caratlane.com/media/catalog/product/J/L/JL04543-1RP900_4_lar.jpg",
@@ -1716,5 +1736,23 @@
       "src3": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07706-1RP600_3_lar.jpg",
       "id": 10
     }
+  ],
+  "homeimage" : [
+   {
+    "image" : "https://cdn.caratlane.com/media/catalog/product/J/R/JR07378-1RP900_3_lar.jpg",
+    "video" :  "https://cdn.caratlane.com/media/catalog/product/J/R/JR07378-1RP900_16_video.mp4"
+   },
+   {
+    "image" : "https://cdn.caratlane.com/media/catalog/product/J/T/JT01768-1RP600_5_lar.jpg",
+    "video" :  "https://cdn.caratlane.com/media/catalog/product/J/T/JT01768-1RP600_16_video.mp4"
+   },
+   {
+    "image" : "https://cdn.caratlane.com/media/catalog/product/J/E/JE07560-1RP9RQ_3_lar.jpg",
+    "video" :  "https://cdn.caratlane.com/media/catalog/product/J/E/JE07560-1RP9RQ_16_video.mp4"
+   },
+   {
+    "image" : "https://cdn.caratlane.com/media/catalog/product/J/L/JL04543-1RP900_4_lar.jpg",
+    "video" : "https://cdn.caratlane.com/media/catalog/product/J/L/JL04543-1RP900_16_video.mp4"
+   }
   ]
 }
