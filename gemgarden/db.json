@@ -1716,5 +1716,49 @@
       "src3": "https://cdn.caratlane.com/media/catalog/product/J/E/JE07706-1RP600_3_lar.jpg",
       "id": 10
     }
+  ],
+   "user": [
+    
+    {
+      "id": 1,
+      "first_name": "Rohit",
+      "last_name": "Banerjee",
+      "gender": "male",
+      "number": "9876543211",
+      "email": "rohit@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "first_name": "Sharvari",
+      "last_name": "Hupre",
+      "gender": "female",
+      "number": "0123456789",
+      "email": "sharvari@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 3,
+      "first_name": "Ranjeet",
+      "last_name": "Kumar",
+      "gender": "male",
+      "number": "123456789",
+      "email": "ranjeet@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 4,
+      "first_name": "Harshit",
+      "last_name": "Kumar",
+      "gender": "male",
+      "number": "8789336147",
+      "email": "harshit@gmail.com",
+      "password": "123456"
+    }
+    
   ]
+
 }
+
+
+
