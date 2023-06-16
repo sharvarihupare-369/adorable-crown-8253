@@ -1,7 +1,7 @@
 import * as React from "react"
 import {Box} from "@chakra-ui/react"
-import { Product } from "./Pages/Product"
-import { Link } from "react-router-dom"
+// import { Product } from "./Pages/Product"
+// import { Link } from "react-router-dom"
 import { MainRoutes } from "./Pages/MainRoutes"
 
 

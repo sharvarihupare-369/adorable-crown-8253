@@ -5,7 +5,7 @@ import { Dispatch } from 'redux'
 import { Card } from './PRODUCTS/Card'
 import { Sidebarprod } from './PRODUCTS/Sidebarprod'
 import styled from '@emotion/styled'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 // import { Card } from '@chakra-ui/react'
 type element={
   src1: string;
@@ -29,7 +29,7 @@ React.useEffect(()=>{
   return (
     <DIV>
       <Sidebarprod/>
-      <div className='productcards'>{arrivalData.map((ele:element,ind:number)=><Link key={ind} to={`/product/${ele.id}`}><Card  {...ele}/></Link>)}</div>
+      <div className='productcards'>{arrivalData.map((ele:element,ind:number)=><Card key={ind} {...ele}/>)}</div>
     </DIV>
   )
 }
@@ -54,9 +54,9 @@ display: flex;
   margin: auto;
 }
 .card{
-  border: 1px solid #e0e0e0;
-  padding: 10px
-}
+  /* border: 1px solid #e0e0e0; */
+  padding: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
 .card img{
   width: 100%;
 }
