@@ -1,6 +1,7 @@
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../firebase";
-import { AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS } from "./actionTypes";
+import { AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS, LOGIN_SUCCESS } from "./actionTypes";
+import { LoginType } from "../../Pages/Login";
 //   import { Signuptype } from "../../Pages/signupTypes";
 
 interface SignupType1 {
@@ -9,9 +10,7 @@ interface SignupType1 {
     password:string
   }
 
-//    interface SubmissionType {
-//     setSubmissiondisbled : React.Dispatch<React.SetStateAction<boolean>>
-//   }
+
  
   export const signup = (formData:SignupType1) => (dispatch:any) => {
   
@@ -22,17 +21,38 @@ interface SignupType1 {
           await updateProfile(user, {
               displayName : formData.name
           })
-        //   console.log(user)
-        //   console.log(res.accessToken)
-        //   console.log(res.user.uid)
+          const tokenId = await user.getIdToken()
+        // console.log(await user.getIdToken())
+        // console.log(res.user.getIdToken().then((res)=>res.json()))
+        // console.log(res.accessToken)
+        // console.log(res.user.uid)
         // setSubmissiondisbled(false)
-          dispatch({type:AUTH_SUCCESS, payload:res.user.uid})
-        //   console.log(res.user["accesToken"])
+
+          dispatch({ type:AUTH_SUCCESS, payload:tokenId })
+        // console.log(res.user["accesToken"])
+
       }).catch(err => {
         // setSubmissiondisbled(false)
          dispatch({type:AUTH_ERROR, payload:err.message})
-        //   console.log(err.message);
+          // console.log(err.message);
       })
   }
+
   
+  
+  
+  export const login = (logindata:LoginType) => (dispatch:any) => {
+       dispatch({type:AUTH_REQUEST})
+       signInWithEmailAndPassword(auth,logindata.email,logindata.password).then(async(res)=>{
+        console.log(res)
+        const token = (await res.user.getIdTokenResult()).token;
+        // console.log((await res.user.getIdTokenResult()).token)
+        dispatch({type:LOGIN_SUCCESS, payload:token})
+            
+       }).catch((err)=>{
+        console.log(err)
+        dispatch({type:AUTH_ERROR, payload:err.message})
+       })
+  }
+
   

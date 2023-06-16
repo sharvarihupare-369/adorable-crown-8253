@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import {Box,Grid,Image,Text,Flex, Heading} from '@chakra-ui/react'
 import handImg from '../Assets/789e8b165732073_640c6f79ae660-transformed.png'
 import backImageBlack from '../Assets/body-bg-free-img.jpg'
@@ -25,10 +25,30 @@ import gold21 from '../Assets/goldImages/shot-young-woman-wearing-festive-jewell
 import gold3 from '../Assets/goldImages/photo-1626784215013-13322cb0e471.jpg'
 import gold4 from '../Assets/goldImages/Gold-Jewellery-Background-387x258.jpg'
 import gold5 from '../Assets/goldImages/gold-necklace-with-flower-design-it_579873-665.jpg'
+import ringimg from '../Assets/videoandImages/ringImage.jpg'
+import ringimg2 from '../Assets/videoandImages/ringImage2.jpg'
+import neckpiece from '../Assets/videoandImages/pendant.jpg'
+import bracelet from '../Assets/videoandImages/bracelet.jpg'
+import earring from '../Assets/videoandImages/earring.jpg'
+import { useDispatch, useSelector } from 'react-redux'
+import { Dispatch } from 'redux'
+import { getImages } from '../Redux/Home/action'
+// import ringvideo from '../Assets/videoandImages/ringvideo.mp4'
 
 
 
 export const HomePage = () => {
+
+  const [status,setStatus] = useState(false)
+  const dispatch:Dispatch<any> = useDispatch()
+  const {images} = useSelector((store:any)=>store.homeReducer)
+  
+  useEffect(()=>{
+    dispatch(getImages())
+  },[])
+
+  console.log(images)
+
   return (
     <>
     <Box  position={"relative"}
@@ -148,28 +168,53 @@ export const HomePage = () => {
       </Flex>
       </Box>
 
-     <Grid textAlign={"left"} color={"#171616"} w="90%" m="50px auto" gap="10px" templateColumns={"repeat(4,1fr)"}>
+     <Grid   textAlign={"left"} color={"#171616"} w="90%" m="50px auto" gap="10px" templateColumns={"repeat(4,1fr)"}>
       <Box  boxShadow= "rgba(149, 157, 165, 0.2) 0px 8px 24px"  >
-        <Image  src={bs1} />
-        <Heading m="10px" as="h6" size={"sm"}>Messika</Heading>
+        
+
+
+
+        {/* {
+          status ? <video autoPlay={true} >
+          <source src="https://cdn.caratlane.com/media/catalog/product/J/R/JR07378-1RP900_16_video.mp4" type="video/mp4"  ></source>
+         </video> :  <Image  src={ringimg} />
+        }
+         */}
+        {/* <Heading m="10px" as="h6" size={"sm"}>Messika</Heading>
         <Text m="10px" fontSize={"14px"}>Move Uno Collection</Text>
       </Box>
-      <Box  boxShadow= "rgba(149, 157, 165, 0.2) 0px 8px 24px">
+      <Box boxShadow= "rgba(149, 157, 165, 0.2) 0px 8px 24px"> */}
 
-        <Image src={bs2} h="300px" />
-        <Heading m="10px" as="h6" size={"sm"}>Messika</Heading>
+        {/* <Image src={neckpiece} h="300px" /> */}
+
+        {/* {
+          status ? <video autoPlay={true} >
+            <source src="https://cdn.caratlane.com/media/catalog/product/J/L/JL04543-1RP900_16_video.mp4" type="video/mp4"  ></source>
+          </video> :  <Image  src={neckpiece} />
+        } */}
+        {/* <Heading m="10px" as="h6" size={"sm"}>Messika</Heading>
         <Text m="10px" fontSize={"14px"}>Lucky Move Collection</Text>
-      </Box>
-      <Box  boxShadow= "rgba(149, 157, 165, 0.2) 0px 8px 24px">
-        <Image src={bs3} />
-        <Heading m="10px" as="h6" size={"sm"}>Garrard</Heading>
-        <Text m="10px" fontSize={"14px"}>1735 Collection</Text>
+      </Box> */}
+      {/* <Box   boxShadow= "rgba(149, 157, 165, 0.2) 0px 8px 24px">
+        <Image src={bs3} /> */}
+        {/* {
+          status ? <video autoPlay={true} >
+            <source src="https://cdn.caratlane.com/media/catalog/product/J/T/JT01768-1RP600_16_video.mp4" type="video/mp4"  ></source>
+          </video> :  <Image  src={bracelet} />
+        } */}
+        {/* <Heading m="10px" as="h6" size={"sm"}>Garrard</Heading>
+        <Text m="10px" fontSize={"14px"}>1735 Collection</Text> */}
        
-      </Box>
-      <Box  boxShadow= "rgba(149, 157, 165, 0.2) 0px 8px 24px">
-        <Image src={bs3} />
-        <Heading m="10px" as="h6" size={"sm"}>Cartier</Heading>
-        <Text m="10px" fontSize={"14px"}>Love Collection</Text>
+      {/* </Box>
+      <Box   boxShadow= "rgba(149, 157, 165, 0.2) 0px 8px 24px">
+        <Image src={earring} /> */}
+        {/* {
+          status ? <video autoPlay={true} >
+            <source src="https://cdn.caratlane.com/media/catalog/product/J/E/JE07560-1RP9RQ_16_video.mp4" type="video/mp4"  ></source>
+          </video> :  <Image  src={earring} />
+        } */}
+        {/* <Heading m="10px" as="h6" size={"sm"}>Cartier</Heading>
+        <Text m="10px" fontSize={"14px"}>Love Collection</Text> */}
       </Box>
      </Grid>
 
@@ -177,24 +222,24 @@ export const HomePage = () => {
     <Image src="https://cdn.shopify.com/s/files/1/0061/8378/0442/files/ezgif.com-gif-maker_3_dc22071c-dd39-40e4-8c5d-ce6b5b51e397.webp?v=1681751207" />
    </Box>
 
-   <Box p="10px"   mt="30px" >
-    <Grid gap="10px" templateColumns={"repeat(3,1fr)"}>
+   <Box    mt="30px" >
+    <Grid gap="30px" templateColumns={"repeat(3,1fr)"}>
     {/* <Box  >
       <Image w="90%" borderRadius={"50%"} h="300px" src={gold1} />
     </Box> */}
     <Box  >
-      <Image w="90%" border={"1px solid white"} borderTopLeftRadius={"10px"} borderBottomRightRadius={"10px"} h="300px" src={gold1} />
+      <Image  w="100%" border={"1px solid white"} borderTopLeftRadius={"10px"} borderBottomRightRadius={"10px"} h="300px" src={gold1} />
     </Box>
     <Box>
-      <Image w="90%"  border={"1px solid white"} borderTopLeftRadius={"10px"} _hover={{}} borderBottomRightRadius={"10px"}  h="300px" src={gold2} />
+      <Image w="100%"  border={"1px solid white"} borderTopLeftRadius={"10px"} borderBottomRightRadius={"10px"}  h="300px" src={gold2} />
     </Box>
     <Box>
-      <Image w="90%" borderTopLeftRadius={"10px"} borderBottomRightRadius={"10px"}  h="300px" src={gold3} />
+      <Image w="100%" borderTopLeftRadius={"10px"} borderBottomRightRadius={"10px"}  h="300px" src={gold3} />
     </Box>
     {/* <Box>
       <Image  w="90%" borderTopLeftRadius={"10px"} borderBottomRightRadius={"10px"}  h="300px" src={gold21} />
-    </Box>
-    <Box>
+    </Box> */}
+    {/* <Box>
       <Image  w="90%" borderTopLeftRadius={"10px"} borderBottomRightRadius={"10px"}  h="300px" src={gold4} />
     </Box>
     <Box>

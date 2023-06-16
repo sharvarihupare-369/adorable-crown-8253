@@ -21,13 +21,14 @@ import {
   Button,
   Heading,
   Text,
-  useColorModeValue,
+  useColorModeValue,  
   Link
  } from '@chakra-ui/react';
 import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { useDispatch, useSelector } from 'react-redux'
 import { Dispatch } from 'redux'
 import { signup } from '../Redux/Authentication/action'
+
 
  interface SignupType {
   name:string;
@@ -47,16 +48,14 @@ export function SignUp() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const toast = useToast()
   const toastIdRef = useRef<string | number | undefined>();
-  const {uid} = useSelector((store:any)=>store.authReducer)
+  const {tokenID} = useSelector((store:any)=>store.authReducer)
   const {errorMessage} = useSelector((store:any)=>store.authReducer)
   const [formvalue,setFormvalue] = useState<SignupType>({
     name : "",
     email:"",
     password:""
   })
-  const [email,setEmail] = useState('')
-  const [password,setPassword] = useState('')
-  console.log(uid)
+  // console.log(uid)
   // Firebase: Error (auth/email-already-in-use).
 
 
@@ -81,10 +80,10 @@ export function SignUp() {
 
        }
 
-       if(formvalue.password.length < 4){
+       if(formvalue.password.length < 6 ){
         return toast({
           title: 'Failed!!',
-          description: "Password must be of at least four characters.",
+          description: "Password must be of 6 characters",
           status: 'error',
           position : 'top',
           duration: 4000,
@@ -92,26 +91,61 @@ export function SignUp() {
         })
       }
 
-      //  setSubmissiondisbled(true)
-  
+      if(!formvalue.password.split("").includes("@")  ){
+        return toast({
+          title: 'Failed!!',
+          description: "Password must contains at least one speacial character.",
+          status: 'warning',
+          position : 'top',
+          duration: 4000,
+          isClosable: true,
+        })
+      }
+      
+
         dispatch(signup(formvalue))
-
-
-
-        
+       
+        setFormvalue({name:"",email:"",password:""})
    
   }
 
+  // useEffect(()=>{
+  //   if(tokenID){
+  //    toast({
+  //             title: 'Success',
+  //             description: 'User Registered Successful',
+  //             status: 'success',
+  //             position: 'top',
+  //             duration: 4000,
+  //             isClosable: true,
+  //           })
+  //   }
+
+  //   if(errorMessage == "Firebase: Error (auth/email-already-in-use)."){
+  //     toast({
+  //             title: 'Failed!!',
+  //             description: 'Firebase: Error (auth/email-already-in-use)',
+  //             status: 'error',
+  //             position: 'top',
+  //             duration: 4000,
+  //             isClosable: true,
+  //           })
+  //   }
+  // },[tokenID,errorMessage])
+
   useEffect(() => {
-    if(uid){
+    if(tokenID){
       toastIdRef.current = toast({
         title: 'Success',
-        description: 'Login Successful',
+        description: 'User Registered Successful',
         status: 'success',
         position: 'top',
         duration: 4000,
         isClosable: true,
       }) as string;
+       setTimeout(()=>{
+         navigate("/login")
+       },4000)
     }
   
     
@@ -121,14 +155,16 @@ export function SignUp() {
         toast.close(toastIdRef.current);
       }
     };
-  }, [uid,  toast])
+  }, [tokenID])
+
+
 
    useEffect(()=>{
-    if(errorMessage){
+    if(errorMessage == "Firebase: Error (auth/email-already-in-use)."){
       toastIdRef.current = toast({
         title: 'Failed!!',
-        description: 'Firebase: Error (auth/email-already-in-use)',
-        status: 'error',
+        description: 'User already registered!',
+        status: 'warning',
         position: 'top',
         duration: 4000,
         isClosable: true,
@@ -140,7 +176,7 @@ export function SignUp() {
         toast.close(toastIdRef.current);
       }
     };
-   },[errorMessage,toast])
+   },[errorMessage])
 
 
   return (
@@ -166,20 +202,23 @@ export function SignUp() {
     <Flex
     style={{backgroundImage:`url(${blackbgEar})`, 
     //  backgroundRepeat:"no-repeat",
-       backgroundSize:"cover",}}
+       backgroundSize:"cover"
+      
+      }}
     
-   
+      
       align={'center'}
       justify={'center'}
       bg={useColorModeValue('gray.50', 'gray.800')}>
-      <Stack  className="animate__animated animate__rubberBand" w={{base:"90%",sm:"90%",md:"80%",lg:"50%",xl:"40%","2xl":"40%"}} >
-        <Stack align={'center'}>
+      <Stack  borderRadius={"none"}  className="animate__animated animate__rubberBand" w={{base:"90%",sm:"90%",md:"80%",lg:"50%",xl:"40%","2xl":"40%"}} >
+        <Stack  align={'center'}>
           <Heading color={"white"} fontSize={'4xl'} textAlign={'center'}>
             Sign up
           </Heading>
           
         </Stack>
         <Box
+        
           rounded={'lg'}
           bg={useColorModeValue('white', 'gray.700')}
           boxShadow={'lg'}
@@ -269,7 +308,7 @@ export function SignUp() {
             </Stack>
             <Stack pt={6}>
               <Text align={'center'}>
-                Already a user? <Link color={'blue.400'}>Login</Link>
+                Already a user? <Link href="/login" color={'rgb(255,189,89)'} fontWeight={"600"} >Login</Link>
               </Text>
             </Stack>
           </Stack>
@@ -280,22 +319,6 @@ export function SignUp() {
         
         </Box>
        
-
-        {/* {uid ?   toast({
-        title: 'Sucess',
-        description: "Login Successful",
-        status: 'success',
-        position : 'top',
-        duration: 4000,
-        isClosable: true,
-      }) : errorMessage  ? toast({
-        title: 'Failed!!',
-        description: "Firebase: Error (auth/email-already-in-use)",
-        status: 'error',
-        position : 'top',
-        duration: 4000,
-        isClosable: true,
-      }) : ""} */}
 
        </>
   );

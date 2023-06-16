@@ -1,11 +1,11 @@
 import { stat } from "fs"
-import { AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS } from "./actionTypes"
+import { AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS, LOGIN_SUCCESS } from "./actionTypes"
 
 export interface SignupInit  {
   isLoading : boolean;
   isAuth:boolean;
   token : string;
-  uid:string;
+  tokenID:string;
   isError : boolean;
   errorMessage:string;
 }
@@ -29,25 +29,39 @@ export const reducer = (state=initialState,{type,payload}:TypeSignUp) => {
       case AUTH_REQUEST : {
         return {
           ...state,
-          isLoading :true
+          isLoading :true,
+          isError:false,
+          isAuth : false,
         }
       }
       case AUTH_SUCCESS : {
            return {
             ...state,
             isLoading : false,
-            uid : payload,
-            isError : false
+            tokenID : payload,
+            isError : false,
+            isAuth : false,
            }
+      }
+      case LOGIN_SUCCESS : {
+        return {
+          ...state,
+          isLoading : false,
+          isError : false,
+          isAuth : true,
+          token : payload
+        }
       }
       case AUTH_ERROR : {
         return {
           ...state,
           isLoading : false,
           isError : true,
+          isAuth : false,
           errorMessage : payload
         }
       }
+
       default : {
         return state
       }
