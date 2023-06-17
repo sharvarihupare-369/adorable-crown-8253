@@ -14,16 +14,14 @@ if (!container) throw new Error('Failed to find the root element');
 const root = ReactDOM.createRoot(container)
 
 root.render(
+    <BrowserRouter>
   <ChakraProvider theme={theme}>
     <Provider store={store}>
-
-    <BrowserRouter>
     <ColorModeScript />
     <App />
-    </BrowserRouter>
     </Provider>
-  
   </ChakraProvider>
+    </BrowserRouter>
 )
 
 serviceWorker.unregister()

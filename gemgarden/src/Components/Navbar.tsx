@@ -20,14 +20,9 @@ import {
   // import './Navbar.module.css'
   import {useState} from 'react';
 import logo from '../Assets/GemGardenLogo2.png'
-import logo1 from '../Assets/GemGardenLogo3.png'
 import { FaSearch } from 'react-icons/fa';
-  import {
-    HamburgerIcon,
-    CloseIcon,
-    ChevronDownIcon,
-    ChevronRightIcon,
-  } from '@chakra-ui/icons';
+  import { HamburgerIcon, CloseIcon, ChevronDownIcon, ChevronRightIcon } from '@chakra-ui/icons';
+  // import {ChevronDownIcon} from  "@chakra-ui/icons"
 import { useNavigate } from 'react-router-dom';
   
   export default function Navbar() {
@@ -36,24 +31,21 @@ import { useNavigate } from 'react-router-dom';
 
     const [show,setShow] = useState(false)
 
+  
     return (
       <Box >
         <Flex
         cursor={"pointer"}
         backgroundColor={"#262425"}
-        //   bg={useColorModeValue('white', 'gray.800')}
           color={useColorModeValue('gray.600', 'white')}
           minH={'80px'}
           py={{ base: 2 }}
           px={{ base: 4 }}
           borderBottom={1}
-          // borderStyle={'solid'}
           bgGradient='linear(to-l, #222220, #2A2829 , #25231F)'
-          // borderColor={useColorModeValue('gray.200', 'gray.900')}
           align={'center'}
           >
           <Flex
-         
             flex={{ base: 1, md: 'auto' }}
             ml={{ base: -2 }}
             display={{ base: 'flex', md: 'none' }}>
@@ -69,29 +61,16 @@ import { useNavigate } from 'react-router-dom';
           <Flex alignItems={"center"} flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
             <Image
             onClick={()=>navigate("/")}
-            src={logo1}
+            src={logo}
             w="70px"
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
-            //   color={useColorModeValue('gray.800', 'white')}
             color={"#FFFFFF"}
               />
-              {/* Logo
-            </Text> */}
-            {/* <Flex >
-            <Box>
-            <Image src={logo} w="100%" />
-            </Box>
-          </Flex>
-             */}
-          
-  
             <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
               <DesktopNav />
             </Flex>
           </Flex>
-
-          
           <Flex   w="25%" alignItems={"center"} mr="30px">
             {
               show ?  <Input   borderRight={"none"}
@@ -99,7 +78,6 @@ import { useNavigate } from 'react-router-dom';
                
               focusBorderColor='none'
               placeholder={'Search Something here...'}
-              // bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
               _placeholder={{ opacity: 1, color: 'white' }}
               _focus={{
                 bg: 'white',
@@ -108,20 +86,13 @@ import { useNavigate } from 'react-router-dom';
             }
            {
             show ?   <CloseIcon style={{color:"white"}}  onClick={():void => setShow(false)} /> : '' 
-           }
-          
-             
+           }  
           </Flex>
-
-  
           <Stack
             flex={{ base: 1, md: 0 }}
             justify={'flex-end'}
             direction={'row'}
             spacing={8}>
-
-            
-
                 <Button
                 textDecoration={"none"}
               color={"#FFFFFF"}
@@ -232,16 +203,13 @@ import { useNavigate } from 'react-router-dom';
         role={'group'}
         display={'block'}
         p={2}
-        borderRadius={"0px"}
-        // rounded={'md'}
+        rounded={'md'}
         _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
         <Stack direction={'row'} align={'center'}>
-          <Box borderRadius={"0px"}>
+          <Box>
             <Text
-              fontSize={"md"}
-              textAlign={"left"}
               transition={'all .3s ease'}
-              _groupHover={{ color: 'rgb(255,189,89)' }}
+              _groupHover={{ color: 'pink.400' }}
               fontWeight={500}>
               {label}
             </Text>
@@ -256,7 +224,7 @@ import { useNavigate } from 'react-router-dom';
             justify={'flex-end'}
             align={'center'}
             flex={1}>
-            <Icon color={'rgb(255,189,89)'} w={5} h={5} as={ChevronRightIcon} />
+            <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
         </Stack>
       </Link>
@@ -336,30 +304,18 @@ import { useNavigate } from 'react-router-dom';
   const NAV_ITEMS: Array<NavItem> = [
     {
       label: 'Jewelery',
-      children: [
-        {
-          label: 'Rings',
-          // subLabel: 'Trending Design to inspire you',
-          // href: '#',
-        },
-        {
-          label: 'Bracelets',
-          // subLabel: 'Up-and-coming Designers',
-          // href: '#',
-        },
-        {
-         label:"Earrings",
-        },
-        {
-          label : "Necklaces & Pendants"
-        },
-        {
-          label : "Accessories"
-        },
-        // {
-        //   label : "Men's Jewelry"
-        // }
-      ],
+      // children: [
+      //   {
+      //     label: 'Explore Design Work',
+      //     subLabel: 'Trending Design to inspire you',
+      //     href: '#',
+      //   },
+      //   {
+      //     label: 'New & Noteworthy',
+      //     subLabel: 'Up-and-coming Designers',
+      //     href: '#',
+      //   },
+      // ],
     },
     {
       label: 'Watches',
@@ -379,6 +335,9 @@ import { useNavigate } from 'react-router-dom';
     {
       label: 'Gifts',
       href: '#',
-    }
-    
+    },
+    // {
+    //   label: 'Hire Designers',
+    //   href: '#',
+    // },
   ];

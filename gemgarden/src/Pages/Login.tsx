@@ -29,10 +29,16 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Dispatch } from 'redux'
 import { login } from '../Redux/Authentication/action'
 
+
+
  export interface LoginType {
+  
   email : string;
   password:string
 }
+
+
+
 
 export function Login() {
   const navigate = useNavigate()
@@ -51,7 +57,6 @@ export function Login() {
   const handleLogin = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         dispatch(login(logindata))
-        setLoginData({email:"",password:""})
   }
   
   useEffect(() => {
@@ -152,7 +157,7 @@ export function Login() {
       align={'center'}
       justify={'center'}
       bg={useColorModeValue('gray.50', 'gray.800')}>
-      <Stack  borderRadius={"none"}  className="animate__animated animate__pulse" w={{base:"90%",sm:"90%",md:"80%",lg:"50%",xl:"40%","2xl":"40%"}} >
+      <Stack  borderRadius={"none"}  className="animate__animated animate__rubberBand" w={{base:"90%",sm:"90%",md:"80%",lg:"50%",xl:"40%","2xl":"40%"}} >
         <Stack  align={'center'}>
           <Heading color={"white"} fontSize={'4xl'} textAlign={'center'}>
            Login
