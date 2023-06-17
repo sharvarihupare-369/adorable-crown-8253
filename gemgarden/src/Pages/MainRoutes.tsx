@@ -10,7 +10,7 @@ import { Contact } from './Contact'
 import { About } from './About'
 import { SingleProductPage } from './SingleProductPage'
 import { Cart } from './Cart'
-import { Payment } from './Payment'
+import  Payment from './Payment'
 import { WishList } from './WishList'
 import { AdminLogin } from './AdminLogin'
 
