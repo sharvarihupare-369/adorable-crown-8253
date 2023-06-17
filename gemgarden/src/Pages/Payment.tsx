@@ -1,6 +1,5 @@
 import { Box, Button, Center, Container, FormControl, FormLabel, Heading, Image, Input, InputGroup, InputLeftAddon, Stack, Text, useToast } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import AlertDialoges from '../Pages/AlertDialog';
 import AlertDialogs from '../Pages/AlertDialog';
 
 

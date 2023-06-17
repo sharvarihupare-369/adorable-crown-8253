@@ -12,7 +12,7 @@ import {
     Heading,
     AlertDialog,
   } from '@chakra-ui/react'
-  import success from "../assets/success.png"
+  
   import { NavLink } from 'react-router-dom';
   
   
@@ -22,7 +22,8 @@ import {
       <>
         <Button onClick={onOpen} bg="blackAlpha.900" isDisabled={val} colorScheme='white' w="200px">{children}</Button>
   
-        <Modal isOpen={isOpen}>
+        <Modal
+         isOpen={isOpen}>
          
           <ModalContent display={'flex'} justifyContent={'center'} alignItems={'center'} p={5}>       
             <ModalBody flexDirection={'column'} display={'flex'} justifyContent={'center'} alignItems={'center'}>
