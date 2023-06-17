@@ -1,7 +1,9 @@
+import  axios  from 'axios';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../firebase";
-import { AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS, LOGIN_SUCCESS } from "./actionTypes";
+import {  AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS, LOGIN_SUCCESS } from "./actionTypes";
 import { LoginType } from "../../Pages/Login";
+import { AdminType } from "../../Pages/AdminLogin";
 //   import { Signuptype } from "../../Pages/signupTypes";
 
 interface SignupType1 {
@@ -22,11 +24,7 @@ interface SignupType1 {
               displayName : formData.name
           })
           const tokenId = await user.getIdToken()
-        // console.log(await user.getIdToken())
-        // console.log(res.user.getIdToken().then((res)=>res.json()))
-        // console.log(res.accessToken)
-        // console.log(res.user.uid)
-        // setSubmissiondisbled(false)
+      
 
           dispatch({ type:AUTH_SUCCESS, payload:tokenId })
         // console.log(res.user["accesToken"])
@@ -56,3 +54,5 @@ interface SignupType1 {
   }
 
   
+
+ 
