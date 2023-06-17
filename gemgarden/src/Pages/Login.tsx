@@ -29,16 +29,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Dispatch } from 'redux'
 import { login } from '../Redux/Authentication/action'
 
-
-
  export interface LoginType {
-  
   email : string;
   password:string
 }
-
-
-
 
 export function Login() {
   const navigate = useNavigate()
@@ -57,6 +51,7 @@ export function Login() {
   const handleLogin = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         dispatch(login(logindata))
+        setLoginData({email:"",password:""})
   }
   
   useEffect(() => {

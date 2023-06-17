@@ -98,9 +98,7 @@ import {
                 </Box>
                 </Flex>
               </Box>
-              {/* <Text fontSize={'sm'}>
-                © 2022 Chakra Templates. All rights reserved
-              </Text> */}
+              
               <Stack bg={"#262425"} mt="30px" direction={'row'} spacing={6}>
                 <SocialButton label={'Twitter'} href={'#'}>
                   <FaTwitter />
@@ -158,8 +156,13 @@ import {
                   aria-label="Subscribe"
                   icon={<BiMailSend />}
                 />
+                
               </Stack>
+              <Text mt="10px" fontSize={'sm'}>
+                © 2023 Gem Garden All rights reserved
+              </Text>
             </Stack>
+            
           </SimpleGrid>
         </Container>
       </Box>

@@ -52,6 +52,8 @@ export const reducer = (state=initialState,{type,payload}:TypeSignUp) => {
           token : payload
         }
       }
+
+    
       case AUTH_ERROR : {
         return {
           ...state,

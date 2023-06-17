@@ -20,6 +20,7 @@ import {
   // import './Navbar.module.css'
   import {useState} from 'react';
 import logo from '../Assets/GemGardenLogo2.png'
+import logo1 from '../Assets/GemGardenLogo3.png'
 import { FaSearch } from 'react-icons/fa';
   import {
     HamburgerIcon,
@@ -35,21 +36,6 @@ import { useNavigate } from 'react-router-dom';
 
     const [show,setShow] = useState(false)
 
-  //   function searchToggle(obj, evt){
-  //     var container = $(obj).closest('.search-wrapper');
-  //         if(!container.hasClass('active')){
-  //             container.addClass('active');
-  //             evt.preventDefault();
-  //         }
-  //         else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
-  //             container.removeClass('active');
-  //             // clear input
-  //             container.find('.search-input').val('');
-  //         }
-  // }
-
-  
-  
     return (
       <Box >
         <Flex
@@ -83,7 +69,7 @@ import { useNavigate } from 'react-router-dom';
           <Flex alignItems={"center"} flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
             <Image
             onClick={()=>navigate("/")}
-            src={logo}
+            src={logo1}
             w="70px"
               textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
               fontFamily={'heading'}
@@ -136,16 +122,6 @@ import { useNavigate } from 'react-router-dom';
 
             
 
-              
-
-
-              {/* <div className="search-wrapper">
-    <div className="input-holder">
-        <input type="text" className="search-input" placeholder="Type to search" />
-        <button className="search-icon" onClick={(event)=> searchToggle({this: event};)}><span></span></button>
-    </div>
-    <span className="close" onClick={(event) => searchToggle({this: event};)}></span>
-</div> */}
                 <Button
                 textDecoration={"none"}
               color={"#FFFFFF"}
@@ -256,13 +232,16 @@ import { useNavigate } from 'react-router-dom';
         role={'group'}
         display={'block'}
         p={2}
-        rounded={'md'}
+        borderRadius={"0px"}
+        // rounded={'md'}
         _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
         <Stack direction={'row'} align={'center'}>
-          <Box>
+          <Box borderRadius={"0px"}>
             <Text
+              fontSize={"md"}
+              textAlign={"left"}
               transition={'all .3s ease'}
-              _groupHover={{ color: 'pink.400' }}
+              _groupHover={{ color: 'rgb(255,189,89)' }}
               fontWeight={500}>
               {label}
             </Text>
@@ -277,7 +256,7 @@ import { useNavigate } from 'react-router-dom';
             justify={'flex-end'}
             align={'center'}
             flex={1}>
-            <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+            <Icon color={'rgb(255,189,89)'} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
         </Stack>
       </Link>
@@ -357,18 +336,30 @@ import { useNavigate } from 'react-router-dom';
   const NAV_ITEMS: Array<NavItem> = [
     {
       label: 'Jewelery',
-      // children: [
-      //   {
-      //     label: 'Explore Design Work',
-      //     subLabel: 'Trending Design to inspire you',
-      //     href: '#',
-      //   },
-      //   {
-      //     label: 'New & Noteworthy',
-      //     subLabel: 'Up-and-coming Designers',
-      //     href: '#',
-      //   },
-      // ],
+      children: [
+        {
+          label: 'Rings',
+          // subLabel: 'Trending Design to inspire you',
+          // href: '#',
+        },
+        {
+          label: 'Bracelets',
+          // subLabel: 'Up-and-coming Designers',
+          // href: '#',
+        },
+        {
+         label:"Earrings",
+        },
+        {
+          label : "Necklaces & Pendants"
+        },
+        {
+          label : "Accessories"
+        },
+        // {
+        //   label : "Men's Jewelry"
+        // }
+      ],
     },
     {
       label: 'Watches',
@@ -388,9 +379,6 @@ import { useNavigate } from 'react-router-dom';
     {
       label: 'Gifts',
       href: '#',
-    },
-    // {
-    //   label: 'Hire Designers',
-    //   href: '#',
-    // },
+    }
+    
   ];
