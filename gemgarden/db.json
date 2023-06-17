@@ -2,19 +2,19 @@
 
   "adminlogindata" : [
     {
-      "email" : "sharvari",
+      "email" : "sharvari@gmail.com",
       "password" : "admin"
     },
     {
-      "email" : "ranjeet",
+      "email" : "ranjeet@gmail.com",
       "password" : "admin"
     },
     {
-      "email" : "rohit",
+      "email" : "rohit@gmail.com",
       "password" : "admin"
     },
     {
-      "email" : "harshit",
+      "email" : "harshit@gmail.com",
       "password" : "admin"
     }
     ],

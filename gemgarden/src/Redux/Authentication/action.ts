@@ -1,7 +1,9 @@
+import  axios  from 'axios';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../firebase";
-import { AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS, LOGIN_SUCCESS } from "./actionTypes";
+import {  AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS, LOGIN_SUCCESS } from "./actionTypes";
 import { LoginType } from "../../Pages/Login";
+import { AdminType } from "../../Pages/AdminLogin";
 //   import { Signuptype } from "../../Pages/signupTypes";
 
 interface SignupType1 {
@@ -56,3 +58,5 @@ interface SignupType1 {
   }
 
   
+
+ 
