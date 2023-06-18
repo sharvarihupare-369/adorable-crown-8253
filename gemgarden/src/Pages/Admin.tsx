@@ -10,8 +10,8 @@ export interface NewDataType {
   name: string;
   image: string;
   material: string;
-  currentPrice: number;
-  originalPrice: number;
+  currentprice: number;
+  orignalprice: number;
   video: string;
   rating: number;
   id?: number;
@@ -20,8 +20,8 @@ export interface NewDataType {
 const initialState = {
   src1: "",
   src2:"",
-  currentPrice: 0,
-  originalPrice: 0,
+  currentprice: 0,
+  orignalprice: 0,
   video: "",
   name: "",
   image: "",
@@ -33,52 +33,39 @@ export const Admin = () => {
   // const dispatch=useDispatch()
   // const Products:IAdmin_Product[]=useSelector((store:Admin_Products_State)=>store.Admin_Products)
   // console.log(Products,"products")
-
+  const [allProducts, setAllProducts] = useState<NewDataType[]>([]);
   const [searchParams, setSearchParams] = useSearchParams();
+
+
   const initialMaterial = searchParams.getAll("material");
   const initialId = searchParams.get("id");
   const initialType = searchParams.getAll("type");
   const initialOrder = searchParams.getAll("order");
-
   const [order, setOrder] = useState(initialOrder || undefined);
   const [material, setMaterial] = useState<string[]>(initialMaterial || []);
   const [type, setType] = useState(initialType || []);
   const [id, setId] = useState(initialId || null);
-const[editId,setEditId]=useState<number>()
 
+
+const[editId,setEditId]=useState<number>()
 const [deleteId,setDeleteId]=useState<number>()
 
 
-  const [allProducts, setAllProducts] = useState<NewDataType[]>([]);
+
+
+
+
 
 
   const [editProduct, setEditProduct] = useState<NewDataType>(initialState);
-
-
-
   const [newData, setNewData] = useState<NewDataType>(initialState);
 
-  const handleChange = (
-    e:
-      | React.ChangeEvent<HTMLInputElement>
-      | React.ChangeEvent<HTMLSelectElement>
-  ) => {
-    const { value, name } = e.target;
-   
-   //for adding new product
-    setNewData({ ...newData, [name]: value });
-
-    //for editing
-    setEditProduct({ ...editProduct, [name]: value });
 
 
-    console.log(newData);
-  };
-  const handleSubmitPost = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    addProduct(newData);
-setAllProducts(pre=> [...pre,newData])
-  };
+
+  
+
+  
 
   const obj = {
     params: {
@@ -99,26 +86,6 @@ setAllProducts(pre=> [...pre,newData])
 
 
 
-  ///Filtering part//////////////////////
-  const handelMaterial = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    let newMaterial = [...material];
-    if (newMaterial.includes(value)) {
-      newMaterial = newMaterial.filter((el) => el !== value);
-    } else {
-      newMaterial.push(value);
-    }
-    setMaterial(newMaterial);
-    console.log(material);
-  };
-
-  const handelId = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setId(value);
-  };
-
-
-
   useEffect(() => {
     let params: Record<string, string | string[]> = {
       material: material,
@@ -132,45 +99,184 @@ setAllProducts(pre=> [...pre,newData])
   }, [id, material, order, type]);
 
 
-  const handleEdit = (productId: number) => {
-    const selectedProduct = allProducts.find((product) => product.id === productId);
+
+
+  ///Filtering part//////////////////////
+  const handelMaterial = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    let newMaterial = [...material];
+    if (newMaterial.includes(value)) {
+      newMaterial = newMaterial.filter((el) => el !== value);
+    } else {
+      newMaterial.push(value);
+    }
+    setMaterial(newMaterial);
+  //  console.log(material);
+  };
+
+  const handelId = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setId(value);
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement> | React.ChangeEvent<HTMLSelectElement>) => {
+    const { value, name } = e.target;
   
+    // Create a new object with updated values for both newData and editProduct
+    const updatedData = { ...newData, [name]: value };
+
+
+    
+  
+    // Update both newData and editProduct with the updated object
+    setNewData(updatedData);
+    setEditProduct(updatedData);
+  
+   // console.log(updatedData);
+  };
+
+  //console.log(editProduct,"editable") 
+  //console.log(newData,"newData")
+
+
+//ADD
+  // const handleSubmitPost = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+
+  //   addProduct(newData);
+  //   setAllProducts((pre) => [...pre, newData]);
+
+
+  // };
+
+
+  const handleSubmitPost = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  
+    if (editId) {
+      // If editId exists, it means we are updating an existing product
+      updateProducts(newData, editId).then(()=>{
+        getProducts(obj).then((res) => {
+                 console.log(res);
+                 setAllProducts([...res]);
+              });
+      });
+    } else {
+      // If editId is null, it means we are adding a new product
+      addProduct(newData);
+      setAllProducts((pre) => [...pre, newData]);
+    }
+  };
+  
+
+
+
+
+//edit product data settings
+  const handleEdit = (productId: number) => {
+   // console.log(productId,"editing id")
+    const selectedProduct = allProducts.find((product) => product.id === productId);
     if (selectedProduct) {
       const { id, ...filteredProduct } = selectedProduct;
       setEditId(productId)
-      setEditProduct(filteredProduct);
+    
+    //for editing the product only
+     // setEditProduct(filteredProduct);
+
+      setNewData(filteredProduct);
     }
   };
-  console.log(editProduct,"editable") 
 
 
 
-const HandelProductChange=()=>{
-  console.log("changinggggggggggggggggg")
-  updateProducts(editProduct,editId).then((res)=>{
-    getProducts(obj).then((res) => {
-      console.log(res);
-      setAllProducts([...res]);
-    });
-  })
-}
+
+  
+  
 
 
 
+const HandelProductChange = () => {
+  console.log("changinggggggggggggggggg");
+
+  updateProducts(editProduct, editId)
+
+  
+    // .then((res) => {
+    //   return getProducts(obj);
+    // })
+    // .then((res) => {
+    //   console.log(res);
+    //   setAllProducts([...res]);
+    // })
+    // .catch((error) => {
+    //   console.error("Error updating products:", error);
+    // });
+  }
+
+//deletFetching
+// const HandelProductChange=()=>{
+//   console.log("changinggggggggggggggggg")
+
+
+//   updateProducts(editProduct,editId).then((res)=>{
+//     getProducts(obj).then((res) => {
+//       console.log(res);
+//       setAllProducts([...res]);
+//     });
+//   })
+//   updateProducts(newData,editId)
+
+
+// }
+
+
+
+
+
+
+
+// const HandelProductChange = () => {
+//   console.log("changinggggggggggggggggg");
+
+//   updateProducts(newData, editId)
+ 
+//       setAllProducts(prevProducts => {
+//         // Remove the old product with the matching editId
+//         const updatedProducts = prevProducts.filter(product => product.id !== editId);
+//         // Add the new data (newData) to the updated products array
+//         updatedProducts.push(newData);
+//         return updatedProducts;
+//       });
+
+// };
+
+
+
+//deletefetching
 const handelDelete = (id: number) => {
   deleteProduct(id)
     .then(() => {
-      // getProducts(obj).then((res) => {
-      //   console.log(res);
-      //   setAllProducts([...res]);
-      // });
-
+      getProducts(obj).then((res) => {
+       // console.log(res);
+        setAllProducts([...res]);
+      });
       const newAllProducts = allProducts.filter((product) => product.id !== id);
       setAllProducts(newAllProducts);
-
-
-
-
     })
     .catch((error) => {
       console.error("Failed to delete product:", error);
@@ -199,7 +305,9 @@ const handelDelete = (id: number) => {
   //console.log(allProducts)
   return (
     <div className={`${styles.admin}`}>
-      <h1>Welcome to Admin Portal</h1>
+<div className={`${styles.navbarAdmin}`}>
+<h1>Welcome to Admin Portal</h1>
+</div>
 
       <div className={`${styles.AdminPageContainer}`}>
         <div className={`${styles.Sortbar}`}>
@@ -304,13 +412,17 @@ const handelDelete = (id: number) => {
             </div>
           </form>
         </div>
+
+
+
+
         <div className={`${styles.AdminProductsList}`}>
           {allProducts.map((el: NewDataType) => (
-            <div className={`${styles.AdminProductCards}`}>
+            <div key={el.id} className={`${styles.AdminProductCards}`}>
               <img src={el.src1} alt="" />
               <p>{el.name}</p>
               <p>{el.material}</p>
-              <h2>{el.currentPrice} Rs</h2>
+              <h2>{el.currentprice} Rs</h2>
               <div className={`${styles.Edit_deletebutton}`}>
                 <button className={`${styles.editbtn}`}   onClick={() =>handleEdit(el.id!)}  >Edit</button>
                 <button className={`${styles.deletebtn}`} onClick={()=>handelDelete(el.id!)}   >Delete</button>
@@ -319,24 +431,27 @@ const handelDelete = (id: number) => {
           ))}
         </div>
 
+
+
+
         <div className={`${styles.AddingSection}`}>
           <div className={`${styles.ProductAddingForm}`}>
             <p>Add new product</p>
-
+     
             <form action="" onSubmit={handleSubmitPost}>
 
               <input
                 type="text"
                 placeholder="Product Name"
                 name="name"
-                value={editProduct.name}
+                defaultValue={newData.name}
                 onChange={handleChange}
               />
-              <select name=" material" id="" value={editProduct.material}
+              <select name="material" id="" defaultValue={newData.material}
              onChange={handleChange}>
                 <option value="">Category</option>
                 <option value="Diamond">Diamond</option>
-                <option value="Solitaire">Solitaire"</option>
+                <option value="Solitaire">Solitaire</option>
                 <option value="Gold">Gold</option>
                 <option value="Silver">Silver</option>
               </select>
@@ -344,16 +459,16 @@ const handelDelete = (id: number) => {
                 <input
                   type="text"
                   placeholder="Price"
-                  name="originalPrice"
-                  value={editProduct.originalPrice}
+                  name="orignalprice"
+                  defaultValue={newData.orignalprice}
                   onChange={handleChange}
                 />
                 <p>To</p>
                 <input
                   type="text"
                   placeholder="Discount"
-                  name="currentPrice"
-                  value={editProduct.currentPrice}
+                  name="currentprice"
+                  defaultValue={newData.currentprice}
                   onChange={handleChange}
                 />
               </div>
@@ -362,7 +477,7 @@ const handelDelete = (id: number) => {
                 placeholder="Upload Image link"
                 name="src1"
                 onChange={handleChange}
-                value={editProduct.src1}
+                defaultValue={newData.src1}
               />
 
               <div className={`${styles.SlidingComponent}`}>
@@ -394,7 +509,7 @@ const handelDelete = (id: number) => {
                   type="checkbox"
                   name="BestSeller"
                   onChange={handleChange}
-                  value="BestSeller"
+                  defaultValue="BestSeller"
                   checked
                 />
               </div>
@@ -402,12 +517,12 @@ const handelDelete = (id: number) => {
                 type="text"
                 placeholder="Video about product"
                 name="src2"
-                value={editProduct.video}
+                defaultValue={newData.video}
                 onChange={handleChange}
               />
-              <input type="text" placeholder="Alternate Image" value={editProduct.src2} />
+              <input type="text" placeholder="Alternate Image" defaultValue={newData.src2} />
          <div className={`${styles.FormButtonDiv}`}>
-         <button type="submit">Add</button>
+         <button type="submit" >Add</button>
               <button onClick={HandelProductChange}>Edit </button>
          </div>
             </form>

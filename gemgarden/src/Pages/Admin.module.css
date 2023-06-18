@@ -10,18 +10,24 @@ padding-bottom: 50px; */
 display: flex;
 flex-direction: column;
 }
+
+.navbarAdmin{
+    position:sticky;
+    z-index: -2;
+    /* border: 2px solid red; */
+}
 h1{
     font-weight: 200;
     font-size:30px;
     color: rgba(255, 255, 255, 0.825);
     padding: 20px 0px 20px;
-    position: sticky;
-    z-index: -    2;
-top: 0;
+  
 
-background: #363527;
-background: linear-gradient(0deg, #363527, #010101);
 
+
+/* background: #363527;
+background: linear-gradient(0deg, #363527, #010101);  */
+background-color: #343325;
 }
 .AdminPageContainer{
     display: flex;
@@ -77,7 +83,7 @@ grid-template-columns: repeat(4,1fr);
 grid-template-rows: repeat(2,1fr);
 gap: 20px;
 justify-content: space-between;
-
+position: sticky;
 }
 .FormButtonDiv{
     width: 100%;
