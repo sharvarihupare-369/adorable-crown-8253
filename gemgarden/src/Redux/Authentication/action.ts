@@ -5,6 +5,8 @@ import { AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS, LOGIN_SUCCESS } from "./actionT
 import { LoginType } from "../../Pages/Login";
 import { AdminType } from "../../Pages/AdminLogin";
 
+
+
 interface SignupType1 {
   name: string;
   email: string;
